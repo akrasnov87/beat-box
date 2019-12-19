@@ -19,6 +19,7 @@ public class BeatBox {
     private AssetManager mAssets;
     private List<Sound> mSounds = new ArrayList<>();
     private SoundPool mSoundPool;
+    private int mVolume = 60;
 
     public BeatBox(Context context) {
         mAssets = context.getAssets();
@@ -33,7 +34,11 @@ public class BeatBox {
         if (soundId == null) {
             return;
         }
-        mSoundPool.play(soundId, 1.0f, 1.0f, 1, 0, 1.0f);
+        mSoundPool.play(soundId, mVolume / 100, mVolume / 100, 1, 0, 1.0f);
+    }
+
+    public void changeVolume(int volume) {
+        mVolume = volume;
     }
 
     public void release() {
