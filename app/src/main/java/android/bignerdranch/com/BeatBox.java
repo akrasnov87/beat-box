@@ -34,7 +34,7 @@ public class BeatBox {
         if (soundId == null) {
             return;
         }
-        mSoundPool.play(soundId, mVolume / 100, mVolume / 100, 1, 0, 1.0f);
+        mSoundPool.play(soundId, 1, 1, 1, 0, 1.0f);
     }
 
     public void changeVolume(int volume) {
